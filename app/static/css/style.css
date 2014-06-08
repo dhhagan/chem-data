@@ -1,0 +1,71 @@
+body {
+    padding-top:70px;
+    font-family: 'Roboto', sans-serif;
+}
+
+body a:hover {
+    text-decoration: none;
+}
+
+.navbar-header {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+
+#brand > h1 {
+    text-align:center;
+    font-size: 25px;
+}
+
+.dynatable  thead {
+    background: #008F00;
+}
+
+/* All media! */
+
+.sidebar-fixed {
+    position:fixed;
+}
+
+@media (max-width: 768px) {
+    #footer {
+        margin-top:30px;
+    }
+
+    .drop {
+        margin-top:15px;
+    }
+
+}
+@media (min-width: 769px) and (max-width: 992px) {
+    #footer {
+        margin-top:60px;
+    }
+
+    .drop {
+        margin-top:15px;
+    }
+
+
+}
+@media (min-width: 993px) and (max-width: 1200px) {
+    #footer {
+        margin-top:60px;
+    }
+
+    #btn-block {
+        max-width:50%;
+    }
+
+}
+@media (min-width: 1201px) {
+    #footer {
+        margin-top:60px;
+    }
+
+    #btn-block {
+        max-width:50%;
+    }
+
+}
+
