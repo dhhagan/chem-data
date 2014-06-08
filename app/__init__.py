@@ -10,7 +10,7 @@ app.config.from_object('config')
 
 db = SQLAlchemy(app)
 moment = Moment(app)
-Mardown(app)
+Markdown(app)
 
 from app import views, models
 
