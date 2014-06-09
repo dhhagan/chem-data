@@ -7,7 +7,6 @@ import os.path
 @app.route('/')
 @app.route('/index')
 def index():
-    user = g.user
     meta = 'Thermodynamic chemistry databases that are easy to search, read, and use!'
     return render_template('index.html',
         meta_description = meta)
