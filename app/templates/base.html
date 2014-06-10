@@ -48,7 +48,14 @@
         {% block nav %}{% endblock %}
 
         <div class='container'>
-            {% block content %}{% endblock %}
+            <div class='row'>
+                <div class='col-lg-2 col-md-2 visible-lg visible-md sidebar-fixed' id='side-nav' data-spy='affix' data-offset-top='100'>
+                    {% block sidenav %}Test{% endblock %}
+                </div>
+                <div class='col-lg-9 col-md-10' id='main'>
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
         </div>
 
         <div id='footer'>
