@@ -9,12 +9,12 @@ from models import Antoine
 @app.route('/index')
 def index():
     meta = 'Thermodynamic chemistry databases that are easy to search, read, and use!'
-    return render_template('index.html',
+    return render_template('main.html',
         meta_description = meta)
 
 @app.route('/db/<db_name>/')
 def db(db_name = None):
-    meta = "Database of thermodynamic properties."
+    meta = "Easily searchable database of antoine equation parameters."
     if db_name is None:
         flash('Sorry. That database does not exist yet.', 'error')
         return redirect( url_for('index') )

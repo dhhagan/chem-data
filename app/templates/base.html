@@ -78,18 +78,9 @@
 
             function set_footer() {
                 var height = $(window).height();
-                var RHS = $('#RHS').height();
                 var footer = $('#footer').height();
 
-                if (RHS + footer < height) {
-                    var styles = {
-                        position: 'absolute',
-                        width: '100%',
-                        bottom: '0',
-                        left: '0'
-                    }
-                    $('#footer').css(styles);
-                };
+
             }
 
             $( document ).ready(function(){
@@ -103,9 +94,6 @@
 
             });
 
-            $( document ).resize(function(){
-                set_footer();
-            });
 
         </script>
 
