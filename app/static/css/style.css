@@ -11,61 +11,49 @@ body a:hover {
     font-family: 'Titillium Web', sans-serif;
 }
 
-
-#brand {
-    text-align:center;
-    font-size: 25px;
+#footer {
+    height:70px;
+    padding: 10px;
 }
+
 
 .dynatable  thead {
     background: #008F00;
 }
 
-/* All media! */
-
-.sidebar-fixed {
-    position:fixed;
+.affix, .affix-top {
+    position:static;
 }
 
-@media (max-width: 768px) {
-    #footer {
-        margin-top:30px;
+/* All media! */
+
+@media (min-width: 992px) {
+    #sidebar.affix-top {
+        position:static;
+        margin-top:0px;
     }
 
-    .drop {
-        margin-top:15px;
-    }
+  #sidebar.affix {
+    position: fixed;
+    min-width: 160px;
+  }
+}
+
+
+@media (max-width: 768px) {
+
 
 }
 @media (min-width: 769px) and (max-width: 992px) {
-    #footer {
-        margin-top:60px;
-    }
-
-    .drop {
-        margin-top:15px;
-    }
 
 
 }
 @media (min-width: 993px) and (max-width: 1200px) {
-    #footer {
-        margin-top:60px;
-    }
 
-    #btn-block {
-        max-width:50%;
-    }
+
 
 }
 @media (min-width: 1201px) {
-    #footer {
-        margin-top:60px;
-    }
-
-    #btn-block {
-        max-width:50%;
-    }
 
 }
 

@@ -48,19 +48,20 @@
         {% block nav %}{% endblock %}
 
         <div class='container'>
-            <div class='row'>
-                <div class='col-lg-2 col-md-2 visible-lg visible-md sidebar-fixed' id='side-nav' data-spy='affix' data-offset-top='100'>
-                    {% block sidenav %}Test{% endblock %}
-                </div>
-                <div class='col-lg-9 col-md-10' id='main'>
-                    {% block content %}{% endblock %}
-                </div>
+            <div class='col-lg-2 col-md-3 visible-lg visible-md' id='LHS'>
+                {% block sidenav %}{% endblock %}
+            </div>
+
+            <div class='col-lg-10 col-md-9' id='RHS'>
+                {% block content %}{% endblock %}
             </div>
         </div>
 
         <div id='footer'>
             <div class='container text-center'>
-                <p class=''>Copyright ©2014. Very Few (if any) Rights Reserved.</p>
+                <p class=''>Copyright ©2014. Very Few (if any) Rights Reserved.<br>
+                    Site built and managed by <a href='http://davidhagan.me'>David H Hagan</a>
+                </p>
             </div>
         </div>
 
@@ -72,6 +73,41 @@
         <script type='text/javascript' src="/static/js/bootbox.min.js"></script>
 
         {% block optionalscript %}{% endblock %}
+
+        <script type='text/javascript'>
+
+            function set_footer() {
+                var height = $(window).height();
+                var RHS = $('#RHS').height();
+                var footer = $('#footer').height();
+
+                if (RHS + footer < height) {
+                    var styles = {
+                        position: 'absolute',
+                        width: '100%',
+                        bottom: '0',
+                        left: '0'
+                    }
+                    $('#footer').css(styles);
+                };
+            }
+
+            $( document ).ready(function(){
+                $('#sidebar').affix({
+                    offset: {
+                        top: 0
+                    }
+                });
+
+                set_footer();
+
+            });
+
+            $( document ).resize(function(){
+                set_footer();
+            });
+
+        </script>
 
     </body>
 </html>

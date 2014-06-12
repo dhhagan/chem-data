@@ -1,0 +1,52 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+{% if db %}
+    <table class='table dynatable' id='db-table'>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Formula</th>
+                <th>A</th>
+                <th>B</th>
+                <th>C</th>
+                <th>T min</th>
+                <th>T max</th>
+                <th>T unit</th>
+                <th>P unit</th>
+                <th>Source</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for compound in db %}
+                <tr>
+                    <td>{{ compound.name }}</td>
+                    <td>{{ compound.formula }}</td>
+                    <td>{{ compound.A }}</td>
+                    <td>{{ compound.B }}</td>
+                    <td>{{ compound.C }}</td>
+                    <td>{{ compound.Tmin }}</td>
+                    <td>{{ compound.Tmax }}</td>
+                    <td>{{ compound.Tunit }}</td>
+                    <td>{{ compound.Punit }}</td>
+                    <td>{{ compound.Source }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
+
+{% endblock %}
+
+{% block optionalscript %}
+
+<script type='text/javascript'>
+$('#db-table').dynatable({
+        dataset: {
+            perPageOptions: [10, 50, 100]
+        }
+    });
+</script>
+
+{% endblock %}
